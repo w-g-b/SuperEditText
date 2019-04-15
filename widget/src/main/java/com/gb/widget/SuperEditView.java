@@ -77,8 +77,6 @@ public class SuperEditView extends LinearLayout {
     public SuperEditView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-
-
         defaultSize = Unit.sp2px(context, defaultSize);
         defaultSize = Unit.sp2px(context, defaultMargin);
         initAttrs(attrs);
@@ -158,8 +156,6 @@ public class SuperEditView extends LinearLayout {
             editText.setBackground(null);
         }
         editText.setHint(editHint);
-
-        editText.setInputType(inputType);
 //        editText.setMaxEms(maxLength);
         editText.setSingleLine(singleLine);
         editText.setText(editTextString);
@@ -172,6 +168,7 @@ public class SuperEditView extends LinearLayout {
         }
         editText.setHintTextColor(editHintTextColor);
         editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, editTextSize);
+        editText.setInputType(inputType);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -240,8 +237,10 @@ public class SuperEditView extends LinearLayout {
         if (showIconSrc == null) {
             showIconSrc = mContext.getResources().getDrawable(R.drawable.ic_visible);
         }
-        if (inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD) {
+        if (inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
             hideShowSwitchIv.setImageDrawable(showIconSrc);
+        } else {
+            hideShowSwitchIv.setImageDrawable(hideIconSrc);
         }
         if (!showSwitch) {
             hideShowSwitchIv.setVisibility(GONE);
@@ -249,7 +248,7 @@ public class SuperEditView extends LinearLayout {
             hideShowSwitchIv.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (editText.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                    if (editText.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
                         editText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                         hideShowSwitchIv.setImageDrawable(showIconSrc);
                     } else {
