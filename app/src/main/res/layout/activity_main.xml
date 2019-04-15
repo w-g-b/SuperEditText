@@ -12,14 +12,14 @@
         android:layout_height="55dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:inputType="text"
         android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:sEditHint="请输入密码"
-        app:sLeftIconSrc="@mipmap/ic_password_flag" />
+        app:sLeftIconSrc="@mipmap/ic_password_flag"
+        app:sShowSwitch="true" />
 
     <View
         android:layout_width="match_parent"

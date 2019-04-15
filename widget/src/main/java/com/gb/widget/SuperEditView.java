@@ -58,7 +58,7 @@ public class SuperEditView extends LinearLayout {
     //默认数据
     private int defaultSize = 14;
     private int defaultMargin = 15;
-    private int defaultInputType = 0;
+    private int defaultInputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD;
     private int defaultMaxLength = 30;
     private int defaultTextColor = 0xFF888888;//文字默认颜色
     private int defaultHintTextColor = 0xFF888888;//提示文字默认颜色
@@ -158,6 +158,7 @@ public class SuperEditView extends LinearLayout {
             editText.setBackground(null);
         }
         editText.setHint(editHint);
+
         editText.setInputType(inputType);
 //        editText.setMaxEms(maxLength);
         editText.setSingleLine(singleLine);
@@ -239,7 +240,7 @@ public class SuperEditView extends LinearLayout {
         if (showIconSrc == null) {
             showIconSrc = mContext.getResources().getDrawable(R.drawable.ic_visible);
         }
-        if (inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+        if (inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD) {
             hideShowSwitchIv.setImageDrawable(showIconSrc);
         }
         if (!showSwitch) {
@@ -268,4 +269,7 @@ public class SuperEditView extends LinearLayout {
     private void initPaint() {
     }
 
+    public String getString() {
+        return editText.getText().toString();
+    }
 }
