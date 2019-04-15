@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SuperEditView">
+        <!--TODO 左侧Icon相关-->
+        <attr name="sLeftIconSrc" format="reference" />
+        <!--<attr name="sLeftIconWidth"  />-->
+        <!--<attr name="sLeftViewGravity" />-->
+        <!--<attr name="sLeftIconHeight" />-->
+        <!--<attr name="sLeftIconMarginLeft" />-->
+        <!--<attr name="sLeftIconMarginTop" />-->
+        <attr name="sLeftIconMarginRight" format="dimension" />
+        <!--<attr name="sLeftIconMarginBottom" />-->
+        <!--<attr name="sLeftIconMargin" />-->
+
+        <!--TODO 中间EditText相关-->
+        <!--<attr name="sEditMarginTop" />-->
+        <!--<attr name="sEditMarginLeft" />-->
+        <!--<attr name="sEditMarginBottom" />-->
+        <!--<attr name="sEditMarginRight" />-->
+        <!--<attr name="sEditMarginParentTop" />-->
+        <!--<attr name="sEditMarginParentLeft" />-->
+        <!--<attr name="sEditMarginParentRight" />-->
+        <!--<attr name="sEditMarginParentBottom" />-->
+        <attr name="sEditHint" format="string" />
+        <attr name="sEditHintTextColor" format="color" />
+        <attr name="sEditTextString" format="string" />
+        <attr name="sEditBackground" format="reference" />
+        <attr name="sEditTextColor" format="color" />
+        <attr name="sEditTextSize" format="dimension" />
+        <attr name="android:singleLine" />
+        <attr name="android:maxLength" />
+        <attr name="android:inputType" />
+
+        <!--TODO 清除按钮相关-->
+        <attr name="sDeletable" format="boolean" />
+        <attr name="sDeleteIconSrc" format="reference" />
+
+        <!--TODO 隐藏文本按钮相关-->
+        <attr name="sShowSwitch" format="boolean" />
+        <attr name="sHideIconSrc" format="reference" />
+        <attr name="sShowIconSrc" format="reference" />
+    </declare-styleable>
+
+</resources>
