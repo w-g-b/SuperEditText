@@ -138,6 +138,8 @@ public class SuperEditView extends LinearLayout {
         leftIconIv.setLayoutParams(leftIconParams);
         if (leftIconSrc != null) {
             leftIconIv.setImageDrawable(leftIconSrc);
+        } else {
+            leftIconIv.setVisibility(GONE);
         }
         addView(leftIconIv);
     }
@@ -197,7 +199,6 @@ public class SuperEditView extends LinearLayout {
 //                    s.delete(temp.length() - 1, temp.length());
 //                    editText.setSelection(s.length());
 //                }
-
             }
         });
         addView(editText);
